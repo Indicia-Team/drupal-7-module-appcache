@@ -30,7 +30,8 @@ function appcache_requirements($phase) {
   module_load_include('inc', 'appcache', 'appcache.manifest');
   $t = get_t();
 
-  $result = appcache_manifest_validate();
+  $response = appcache_manifest_validate();
+  $result = $response['result'];
 
   if (!empty($result)) {
     $requirements['appcache_manifest'] = array(
